@@ -1,0 +1,32 @@
+version: "3"
+services:
+  app:
+    build: ./app
+    links:
+      - db
+    networks:
+      - backend 
+    ports:
+      - "80:5000"
+
+  db:
+    image: mariadb:10.5
+    networks:
+      - backend 
+    environment:
+      MYSQL_ROOT_PASSWORD: <mysql root password>
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d/
+  phpmyadmin:
+    image: phpmyadmin:latest
+    environment:
+      PMA_HOST: db
+      PMA_USER: <mysql user>
+      PMA_PASSWORD: <mysql user password>
+    ports:
+      - "8080:80"     
+    networks:
+      - backend    
+
+networks:
+  backend:

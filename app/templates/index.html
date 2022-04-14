@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ticket List</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       
+        <style> 
+            input[type=text] {
+              width: 10%;
+              padding: 12px 20px;
+              margin: 8px 0;
+              box-sizing: border-box;
+              border: 2px solid rgb(4, 146, 241);
+              border-radius: 4px;
+            }
+            input[type=submit] {
+              background-color: rgb(4, 146, 241);
+              border: 1px solid rgb(4, 5, 5);
+              color: white;
+              padding: 6px 7px;
+              text-decoration: none;
+              margin: 4px 2px;
+              box-sizing: border-box;
+              border-radius: 2px;
+              cursor: pointer;
+            }
+
+            </style>    
+    </head>
+    <body>
+  
+        <form action="/add_text" method="post">
+            <label for="textv">Ticket ID:</label><br>
+            <input type="text" id="textv" name="textv" value=""><br>
+            <input type="submit" value="Submit">
+       </form>
+       <br><br><hr>
+</body>
+
